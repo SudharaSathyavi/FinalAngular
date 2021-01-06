@@ -1,0 +1,116 @@
+<div class="container">
+  <p class="txt-header">Login Form</p>
+  <hr>
+
+  <mat-tab-group>
+    <mat-tab label="Login">
+      <br>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+      <br>
+      <br>
+      <div class="row" style="margin: 0">
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input [(ngModel)]="userEmail"  type="email" class="form-control" id="email"
+                       aria-describedby="emailHelp">
+                <p *ngIf="userEmailErrorState" class="alert alert-danger" style="margin-top: 2px">
+                  User email is required!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input [(ngModel)]="userPassword" type="password" class="form-control" id="password">
+                <p *ngIf="userPasswordErrorState" class="alert alert-danger" style="margin-top: 2px">
+                  User Password is required!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <button style="width: 100%" (click)="login()" type="button" class="btn btn-primary">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Sign up">
+
+
+      <br>
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+      <br>
+      <br>
+
+      <div class="row" style="margin: 0">
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="sign-up-email">Email address</label>
+                <input [(ngModel)]="signUpEmail"  type="email" class="form-control" id="sign-up-email"
+                       aria-describedby="emailHelp">
+                <p *ngIf="signUpEmailErrorState" class="alert alert-danger" style="margin-top: 2px">
+                  User email is required!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="sign-up-password">Password</label>
+                <input [(ngModel)]="signUpPassword" type="password" class="form-control" id="sign-up-password">
+                <p *ngIf="signUpPasswordErrorState" class="alert alert-danger" style="margin-top: 2px">
+                  User Password is required!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input [(ngModel)]="signName" type="text" class="form-control" id="name">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="form-group">
+                <label for="contact">Contact</label>
+                <input [(ngModel)]="signUpContact" type="tel" class="form-control" id="contact">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="row" style="margin: 0">
+            <div class="col-12 col-sm-6 col-md-4">
+              <button style="width: 100%" (click)="signUp()" type="button" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </mat-tab>
+  </mat-tab-group>
+
+</div>
